@@ -37,8 +37,8 @@ options:
 
 ```yaml
 - services: [400211] # BS11
-  genres: [0x70]
-  genres!: [0x52]
+  genres: [0x70, 0x71]
+  genres!: [0x40, 0x52]
   tags: [archive]
   into: anime_2024spring
   priority: 10
@@ -50,7 +50,7 @@ options:
 
 ```python
 def ruleset(sid, name, genres):
-    if sid in {400211} and genres & {112} and (not genres & {82}):
+    if sid in {400211} and genres & {112, 113} and (not genres & {64, 82}):
         return rules[0]
 
     # ...
