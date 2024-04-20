@@ -9,7 +9,6 @@ This script manages recording schedules based on the ruleset defined in YAML.
 
 import argparse
 import ast
-import copy
 import datetime
 import http.client
 import json
@@ -356,7 +355,7 @@ def batch_update(ruleset_path, keep, dryrun):
 
 
 def dump_scheduled(services, scheduled):
-    scheduled = copy.copy(scheduled)
+    scheduled = scheduled[:]
     scheduled.sort(key=lambda s: s['program']['startAt'])
     scheduled.sort(key=lambda s: index_service(services, s['program']))
 
@@ -371,7 +370,7 @@ def dump_scheduled(services, scheduled):
 
 
 def dump_conflicted(services, scheduled, tuners):
-    scheduled = copy.copy(scheduled)
+    scheduled = scheduled[:]
     scheduled.sort(key=lambda s: s['program']['startAt'])
 
     checkpoints = set()
