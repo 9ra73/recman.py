@@ -22,7 +22,7 @@ import unicodedata
 import yaml
 
 try:
-    from fuzzywuzzy import fuzz  # Optional. Use rapidfuzz if available
+    from rapidfuzz import fuzz  # Optional
 except ModuleNotFoundError:
     pass
 

@@ -94,7 +94,7 @@ def ruleset(sid, name, genres):
 
 あいまい一致を使う場合は以下のライブラリが別途必要です:
 
-- `fuzzywuzzy`
+- `rapidfuzz`
 
 ## ライセンス
 
